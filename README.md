@@ -2,4 +2,4 @@
 
 ## TODO 
 
-- [ ] Using 🟢 or 🟡 or 🔴 emojis for statuses.
+- [x] Using 🟢 or 🟡 or 🔴 emojis for statuses.
