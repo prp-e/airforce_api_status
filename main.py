@@ -25,7 +25,7 @@ for model in models:
 
 dt = datetime.now()
 
-with open(f'models-{dt.year}{dt.month}{dt.day}{dt.hour}{dt.minute}{dt.second}.md', 'w') as file:
+with open(f'models-{dt.year}{dt.month}{dt.day}{dt.hour}{dt.minute}{dt.second}.md', 'a') as file:
     file.write("| Model | Status |\n|:------------------------:|:------------------------:|")
     for model in fine_models:
         file.write(f'| {model["model"]} | {model["status"]}')
