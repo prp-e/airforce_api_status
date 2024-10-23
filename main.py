@@ -36,4 +36,4 @@ dt = datetime.now()
 with open(f'models-{dt.year}{dt.month}{dt.day}{dt.hour}{dt.minute}{dt.second}.md', 'a') as file:
     file.write("| Model | Status |\n|:------------------------:|:------------------------:|\n")
     for model in fine_models:
-        file.write(f'| {model["model"]} | {model["status"]}\n')
+        file.write(f'| {model["model"]} | {model["status"]}|\n')
