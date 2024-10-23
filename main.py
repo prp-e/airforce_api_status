@@ -25,6 +25,9 @@ for model in models:
         print(f'{model} added to the list')
     time.sleep(0.25)
 
-with open(f'models-{datetime.now()}', 'w') as file:
+dt = datetime.now()
+
+with open(f'models-{dt.year}{dt.month}{dt.day}{dt.hour}{dt.minute}{dt.second}.md', 'w') as file:
+    file.write("| Model | Status |\n|:------------------------:|:------------------------:|")
     for model in fine_models:
         file.write(f'{model}\n')
