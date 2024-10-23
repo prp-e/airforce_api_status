@@ -23,3 +23,7 @@ for model in models:
         fine_models.append(model)
         print(f'{model} added to the list')
     time.sleep(0.25)
+
+with open('models.txt', 'w') as file:
+    for model in fine_models:
+        file.write(f'{model}\n')
