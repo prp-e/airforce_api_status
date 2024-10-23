@@ -5,6 +5,8 @@ models = ['claude-3-haiku-20240307', 'claude-3-sonnet-20240229', 'claude-3-5-son
 
 base_url = "https://api.airforce/chat/completions"
 
+fine_models = []
+
 for model in models:
     data = {
         "model" : model,
@@ -17,4 +19,7 @@ for model in models:
     }
     res = requests.post(base_url, json = data, headers = {"Content-type" : "Application/json"})
     print(f"Model {model} : {res.status_code}")
-    time.sleep(1)
+    if res.status_code == 200:
+        fine_models.append(model)
+        print(f'{model} added to the list')
+    time.sleep(0.25)
