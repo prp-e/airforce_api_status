@@ -19,7 +19,14 @@ for model in models:
         ]
     }
     res = requests.post(base_url, json = data, headers = {"Content-type" : "Application/json"})
-    model_data = {"model" : model, "status" : res.status_code}
+
+    if res.status_code == 200:
+        model_data = {"model" : model, "status" : "🟢"}
+    elif res.status_code == 500:
+        model_data = {"model" : model, "status" : "🔴"}
+    else:
+        model_data = {"model" : model, "status" : "🟡"}
+    
     fine_models.append(model_data)
     print(f"checking {model}...")
     time.sleep(0.25)
