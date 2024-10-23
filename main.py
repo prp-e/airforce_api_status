@@ -20,6 +20,7 @@ for model in models:
     }
     res = requests.post(base_url, json = data, headers = {"Content-type" : "Application/json"})
     model_data = {"model" : model, "status" : res.status_code}
+    print(f"checking {model}...")
     time.sleep(0.25)
 
 dt = datetime.now()
