@@ -19,10 +19,7 @@ for model in models:
         ]
     }
     res = requests.post(base_url, json = data, headers = {"Content-type" : "Application/json"})
-    print(f"Model {model} : {res.status_code}")
-    if res.status_code == 200:
-        fine_models.append(model)
-        print(f'{model} added to the list')
+    model_data = {"model" : model, "status" : res.status_code}
     time.sleep(0.25)
 
 dt = datetime.now()
@@ -30,4 +27,4 @@ dt = datetime.now()
 with open(f'models-{dt.year}{dt.month}{dt.day}{dt.hour}{dt.minute}{dt.second}.md', 'w') as file:
     file.write("| Model | Status |\n|:------------------------:|:------------------------:|")
     for model in fine_models:
-        file.write(f'{model}\n')
+        file.write(f'| {model["model"]} | {model["status"]}')
