@@ -1,0 +1,1 @@
+# [api.airforce](https://api.airforce) status script
