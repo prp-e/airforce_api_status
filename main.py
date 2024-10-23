@@ -25,6 +25,6 @@ for model in models:
         print(f'{model} added to the list')
     time.sleep(0.25)
 
-with open('models.txt', 'w') as file:
+with open(f'models-{datetime.now()}', 'w') as file:
     for model in fine_models:
         file.write(f'{model}\n')
